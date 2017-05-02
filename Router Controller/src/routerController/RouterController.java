@@ -60,8 +60,8 @@ public class RouterController extends Equipment{
 
         return result;
     }
-    public ResultSocketStructure setDHCPConfiguration(String min, String max){
-        OperationSocketStructure operation = dhcpManager.setDHCPOperation(min, max);
+    public ResultSocketStructure setDHCPConfiguration(String min, String max, String time){
+        OperationSocketStructure operation = dhcpManager.setDHCPOperation(min, max, time);
         ResultSocketStructure result = controllerSocketNetworkManager.operationExecute(operation);
 
         System.out.println(getTime() + " " + result.getMessage());

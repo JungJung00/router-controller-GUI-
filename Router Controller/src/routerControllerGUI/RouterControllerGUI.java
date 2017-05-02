@@ -44,6 +44,7 @@ public class RouterControllerGUI {
     private JButton SSIDPasswordSetButton;
     private JButton portForwardingButton;
     private JButton portForwardingSetButton;
+    private JTextField IPAllocationTime;
 
     private static RouterController routerController;
 
@@ -97,13 +98,13 @@ public class RouterControllerGUI {
                 responseMessageArea.append(result.getMessage() + "\n");
 
                 dlm.clear();
-                dlm.addElement("DHCP IP Range : " + dhcpConfiguration.getMinDHCPAddressRange() + " ~ " + dhcpConfiguration.getMaxDHCPAddressRange());
+                dlm.addElement("DHCP IP Range : " + dhcpConfiguration.getMinDHCPAddressRange() + " ~ " + dhcpConfiguration.getMaxDHCPAddressRange() + " | Allocation Time : " + dhcpConfiguration.getIpAllocationTime());
             }
         });
         DHCPSetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ResultSocketStructure result = routerController.setDHCPConfiguration(minDHCPAddressRangeTextField.getText(), maxDHCPAddressRangeTextField.getText());
+                ResultSocketStructure result = routerController.setDHCPConfiguration(minDHCPAddressRangeTextField.getText(), maxDHCPAddressRangeTextField.getText(), IPAllocationTime.getText());
 
                 responseMessageArea.append(result.getMessage() + "\n");
             }

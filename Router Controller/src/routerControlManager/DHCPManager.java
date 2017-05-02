@@ -18,10 +18,10 @@ public class DHCPManager {
         return new OperationSocketStructure(OperationCode.DHCP_CONFIGURATION, DetailOperationCode.GET_DHCP_CONFIGURATION);
     }
 
-    public OperationSocketStructure setDHCPOperation(String min, String max){
+    public OperationSocketStructure setDHCPOperation(String min, String max, String time){
         OperationSocketStructure operation = new OperationSocketStructure(OperationCode.DHCP_CONFIGURATION, DetailOperationCode.SET_DHCP_CONFIGURATION);
 
-        operation.setDhcpSetting(new DHCPInfo(min, max));
+        operation.setDhcpSetting(new DHCPInfo(min, max, time));
 
         return operation;
     }
