@@ -168,18 +168,23 @@
                   <toolTipText value="ex) 3000"/>
                 </properties>
               </component>
-              <component id="2eb86" class="javax.swing.JTextField" binding="innerIPText">
+              <component id="491b4" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Port Forwarding Configuration"/>
+                </properties>
+              </component>
+              <component id="9b9e8" class="javax.swing.JFormattedTextField" binding="innerIPText">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties>
-                  <text value="Inner IP Address"/>
-                  <toolTipText value="ex) 127.0.0.1"/>
-                </properties>
+                <properties/>
               </component>
-              <component id="6b340" class="javax.swing.JTextField" binding="outerPortText">
+              <component id="7d4ca" class="javax.swing.JTextField" binding="outerPortText">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -188,14 +193,6 @@
                 <properties>
                   <text value="Outer Port"/>
                   <toolTipText value="ex) 3000"/>
-                </properties>
-              </component>
-              <component id="491b4" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Port Forwarding Configuration"/>
                 </properties>
               </component>
             </children>
@@ -256,26 +253,22 @@
                   <text value="DHCP Configuration"/>
                 </properties>
               </component>
-              <component id="8c6ef" class="javax.swing.JTextField" binding="maxDHCPAddressRangeTextField" default-binding="true">
+              <component id="f75f8" class="javax.swing.JFormattedTextField" binding="maxDHCPAddressRangeTextField">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties>
-                  <text value="max DHCP Address range"/>
-                  <toolTipText value="ex) 127.0.0.50"/>
-                </properties>
+                <properties/>
               </component>
-              <component id="2269" class="javax.swing.JTextField" binding="minDHCPAddressRangeTextField" default-binding="true">
+              <component id="c37ce" class="javax.swing.JFormattedTextField" binding="minDHCPAddressRangeTextField">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
                 <properties>
-                  <text value="min DHCP Address range"/>
-                  <toolTipText value="ex) 127.0.0.1"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>

@@ -8,11 +8,11 @@ import router.SecurityConfigurationInfo;
 import routerController.RouterController;
 
 import javax.swing.*;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
+import java.awt.event.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 /**
@@ -33,11 +33,11 @@ public class RouterControllerGUI {
     private JPanel DHCPField;
     private JPanel SSIDPasswordField;
     private JTextField ruleNameText;
-    private JTextField innerIPText;
+    private JFormattedTextField innerIPText;
     private JTextField innerPortText;
     private JTextField outerPortText;
-    private JTextField maxDHCPAddressRangeTextField;
-    private JTextField minDHCPAddressRangeTextField;
+    private JFormattedTextField minDHCPAddressRangeTextField;
+    private JFormattedTextField maxDHCPAddressRangeTextField;
     private JTextField passwordTextField;
     private JTextField SSIDTextField;
     private JButton DHCPSetButton;
@@ -167,13 +167,24 @@ public class RouterControllerGUI {
         });
 
         routerController = new RouterController();
-
     }
 
     public static void main(String args[]){
         JFrame frame = new JFrame("RouterControllerGUI");
-        frame.setContentPane(new RouterControllerGUI().panelMain);
+        RouterControllerGUI routerControllerGUI = new RouterControllerGUI();
+        frame.setContentPane(routerControllerGUI.panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        try{
+            MaskFormatter mf = new MaskFormatter("###.###.###.###");
+            DefaultFormatterFactory dff = new DefaultFormatterFactory(mf);
+            routerControllerGUI.minDHCPAddressRangeTextField.setFormatterFactory(dff);
+            routerControllerGUI.maxDHCPAddressRangeTextField.setFormatterFactory(dff);
+            routerControllerGUI.innerIPText.setFormatterFactory(dff);
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
         frame.pack();
         frame.setVisible(true);
 
